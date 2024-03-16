@@ -1,0 +1,101 @@
+\newcommand{\supervisor}[1]{\renewcommand{\supervisor}{#1}}
+\newcommand{\secondexaminer}[1]{\renewcommand{\secondexaminer}{#1}}
+\newcommand{\uid}[1]{\renewcommand{\uid}{#1}}
+\newcommand{\courseproject}[1]{\renewcommand{\courseproject}{#1}}
+
+\providecommand{\maketitle}{}
+\renewcommand{\maketitle}{
+  \begin{titlepage}
+    \centering
+    \vspace*{\stretch{1}}
+    \includegraphics[width=0.3\textwidth]{assets/hku-logo.png}\par
+    \vspace{2cm}
+    \Large \courseproject\par
+    \vspace{2cm}
+    \Large \@author \ (\uid)\par
+    \vspace{0.5cm}
+    {\Large\itshape \@title}\par
+    \vspace{0.5cm}
+    \textbf{Supervisor:}
+    \supervisor\par
+    \vspace{0.5cm}
+    \textbf{Second Examiner:}
+    \secondexaminer\par
+    \vspace{3cm}
+    \today
+    \vspace{\stretch{2}}
+  \end{titlepage}
+}
+
+\newenvironment{acknowledgment}
+  {%
+    \clearpage % Ensure Acknowledgements start on a new page (optional)
+    \addcontentsline{toc}{section}{Acknowledgements}% Add to ToC
+    \small\begin{center}%
+    \bfseries Acknowledgements\vspace{-.5em}\vspace{0pt}%
+  \end{center}%
+  \list{}{%
+    \setlength{\leftmargin}{0.5in}%  Indentation on the left
+    \setlength{\rightmargin}{\leftmargin}% Indentation on the right
+  }%
+  \item\relax%
+  }
+  {\endlist}
+
+\let\oldabstract\abstract
+\let\endoldabstract\endabstract
+\renewenvironment{abstract}{
+  \clearpage % Ensure the abstract starts on a new page if desired
+  \addcontentsline{toc}{section}{Abstract} % Add abstract entry to the ToC
+  \oldabstract % Begin original abstract environment
+}{
+  \endoldabstract % End original abstract environment
+  \clearpage
+}
+
+\newcommand{\frontmatter}{
+  \cleardoublepage
+  \pagenumbering{roman}
+}
+
+\newcommand{\mainmatter}{
+  \cleardoublepage
+  \pagenumbering{arabic}
+}
+
+\newcommand{\backmatter}{
+    \setcounter{secnumdepth}{0}
+}
+
+\newcommand{\makefrontmatter}{
+  \clearpage
+  \tableofcontents
+  \clearpage
+  \listoffigures
+  \clearpage
+  \listoftables
+  \clearpage
+}
+
+\newcommand{\makereferences}{
+  \clearpage
+  \bibliographystyle{plain}
+  \bibliography{references}
+  \clearpage
+}
+
+\RequirePackage{geometry}
+\geometry{
+  top=1in,
+  bottom=1in,
+  left=1in,
+  right=1in,
+}
+
+\RequirePackage{setspace}
+\onehalfspacing
+
+\RequirePackage[nottoc,numbib]{tocbibind}
+
+\RequirePackage{mathptmx} % This package allows the use of Times New Roman
+

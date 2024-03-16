@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+
+\usepackage{hkueee}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{cleveref}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{doi}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\newfontfamily\chinesefont{Noto Serif TC}
+\usepackage{setspace}
+\usepackage{nomencl}
+\makenomenclature
+
+\hypersetup{
+  pdftitle={\@title},
+  pdfauthor={\@author},
+}
+
+% metadata for the  project
+\courseproject{The project course title here}
+\title{Your title here}
+\author{Your name here}
+\uid{Your UID here}
+\supervisor{Your supervisor's name here}
+\secondexaminer{Your second examiner's name here}
+
+
+\begin{document}
+
+\maketitle
+\frontmatter
+\input{sections/abstract.tex}
+\input{sections/acknowledgement.tex}
+\makefrontmatter
+\input{sections/nomenclature.tex}
+
+\mainmatter
+\input{sections/introduction.tex}
+\input{sections/demo-section.tex}
+\input{sections/conclusion.tex}
+
+\backmatter
+\makereferences
+\appendix
+\input{appendixes/appendix-a.tex}
+
+\end{document}
