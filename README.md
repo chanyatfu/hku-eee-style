@@ -4,7 +4,7 @@
 3. Run `xe * 2` if you don't need citation, run `xelatex -> makeindex -> bibtex -> xelatex*2` if you need citation.
 
 ## LaTeX Workshop Setting
-`
+```
   "latex-workshop.latex.recipes": [
     {
       "name": "xe*2",
@@ -88,10 +88,10 @@
       "args": ["%DOCFILE%.nlo", "-s", "nomencl.ist", "-o", "%DOCFILE%.nls"]
     }
   ],
-`
+```
 
 ## VSCode Ignore setting
-`
+```
   "files.exclude": {
     "**/*.aux": true,
     "**/*.synctex.gz": true,
@@ -107,4 +107,4 @@
     "**/*.nlo": true,
     "**/*.nls": true
   },
-`
+```
