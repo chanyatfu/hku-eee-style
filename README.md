@@ -1,5 +1,5 @@
 ## Kickstart
-. Install the LaTeX Workshop extension in your Visual Studio Code.
+1. Install the LaTeX Workshop extension in your Visual Studio Code.
 2. Copy and paste the following setting in you `setting.json` file (open it by `cmd + ,`).
 3. Run `xe * 2` if you don't need citation, run `xelatex -> makeindex -> bibtex -> xelatex*2` if you need citation.
 
